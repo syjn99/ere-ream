@@ -1,6 +1,11 @@
 use zkvm_interface::ProverResourceType;
 
-#[cfg(all(not(feature = "risc0"), not(feature = "sp1"), not(feature = "openvm")))]
+#[cfg(all(
+    not(feature = "risc0"),
+    not(feature = "sp1"),
+    not(feature = "openvm"),
+    not(feature = "pico")
+))]
 pub fn new_zkvm(
     _prover_resource: ProverResourceType,
 ) -> anyhow::Result<Box<dyn zkvm_interface::zkVM>> {
@@ -31,4 +36,12 @@ pub mod openvm;
 #[cfg(feature = "openvm")]
 pub fn new_zkvm(prover_resource: ProverResourceType) -> anyhow::Result<impl zkvm_interface::zkVM> {
     openvm::new_openvm_zkvm(prover_resource)
+}
+
+#[cfg(feature = "pico")]
+pub mod pico;
+
+#[cfg(feature = "pico")]
+pub fn new_zkvm(prover_resource: ProverResourceType) -> anyhow::Result<impl zkvm_interface::zkVM> {
+    pico::new_pico_zkvm(prover_resource)
 }

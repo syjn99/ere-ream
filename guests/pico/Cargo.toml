@@ -1,0 +1,11 @@
+[package]
+name = "pico-guest"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+pico-sdk = { git = "https://github.com/brevis-network/pico" }
+
+# Ream dependencies
+ream-consensus = { workspace = true }

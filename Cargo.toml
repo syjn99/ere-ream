@@ -2,6 +2,7 @@
 members = [
     "host",
     "guests/openvm",
+    "guests/pico",
     "guests/risc0",
     "guests/risc0/guest",
     "guests/sp1",
