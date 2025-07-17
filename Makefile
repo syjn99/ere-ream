@@ -32,3 +32,7 @@ run_pico: ## run pico
 
 run_zisk: ## run zisk
 	cargo run --bin host --features=zisk  --release -- --nocapture
+
+# Note: Jolt is not supported yet.
+run_jolt: ## run jolt
+	@echo "Jolt zkVM is not supported yet. Please use another zkVM."
