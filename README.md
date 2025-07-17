@@ -8,5 +8,5 @@ You should install all necessary dependencies for each zkVMs. Find out missing S
 
 ```bash
 # Select zkVM with Rust Features in compile time.
-cargo run --bin host --features <sp1, risc0, openvm>
+make run_<sp1,risc0,openvm,pico>
 ```
