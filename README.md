@@ -7,7 +7,7 @@ You should install all necessary dependencies for each zkVMs. Find out missing S
 ## Execute
 
 > [!Warning]
-> As Zisk is not explictly supported in macOS, 
+> As Zisk is not explictly supported in macOS (See [release note](https://github.com/0xPolygonHermez/zisk/releases/tag/v0.9.0) of `v0.9.0`), I haven't been able to test Zisk.
 
 ```bash
 # Select zkVM with Rust Features in compile time.
