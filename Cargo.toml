@@ -6,6 +6,7 @@ members = [
     "guests/risc0",
     "guests/risc0/guest",
     "guests/sp1",
+    "guests/zisk",
     "utils",
 ]
 resolver = "2"

@@ -3470,6 +3470,11 @@ dependencies = [
 ]
 
 [[package]]
+name = "lib-c"
+version = "0.9.0"
+source = "git+https://github.com/0xPolygonHermez/zisk?rev=v0.9.0#efbcdd4dddb39cf410d496358d01ee133a484780"
+
+[[package]]
 name = "libc"
 version = "0.2.174"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -9872,6 +9877,31 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.104",
+]
+
+[[package]]
+name = "zisk-guest"
+version = "0.1.0"
+dependencies = [
+ "bincode",
+ "ream-consensus",
+ "ziskos",
+]
+
+[[package]]
+name = "ziskos"
+version = "0.9.0"
+source = "git+https://github.com/0xPolygonHermez/zisk?rev=v0.9.0#efbcdd4dddb39cf410d496358d01ee133a484780"
+dependencies = [
+ "cfg-if",
+ "getrandom 0.2.16",
+ "lazy_static",
+ "lib-c",
+ "num-bigint 0.4.6",
+ "num-traits",
+ "rand 0.8.5",
+ "static_assertions",
+ "tiny-keccak",
 ]
 
 [[package]]

@@ -4,13 +4,14 @@ use zkvm_interface::ProverResourceType;
     not(feature = "risc0"),
     not(feature = "sp1"),
     not(feature = "openvm"),
-    not(feature = "pico")
+    not(feature = "pico"),
+    not(feature = "zisk")
 ))]
 pub fn new_zkvm(
     _prover_resource: ProverResourceType,
 ) -> anyhow::Result<Box<dyn zkvm_interface::zkVM>> {
     Err::<Box<dyn zkvm_interface::zkVM>, anyhow::Error>(anyhow::anyhow!(
-        "No zkVM feature enabled. Please enable either 'risc0' or 'sp1'."
+        "No zkVM feature enabled. Please enable valid feature(s): risc0, sp1, openvm, pico, zisk."
     ))
 }
 
@@ -44,4 +45,12 @@ pub mod pico;
 #[cfg(feature = "pico")]
 pub fn new_zkvm(prover_resource: ProverResourceType) -> anyhow::Result<impl zkvm_interface::zkVM> {
     pico::new_pico_zkvm(prover_resource)
+}
+
+#[cfg(feature = "zisk")]
+pub mod zisk;
+
+#[cfg(feature = "zisk")]
+pub fn new_zkvm(prover_resource: ProverResourceType) -> anyhow::Result<impl zkvm_interface::zkVM> {
+    zisk::new_zisk_zkvm(prover_resource)
 }

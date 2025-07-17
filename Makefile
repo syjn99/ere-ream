@@ -2,7 +2,6 @@
 
 # Makefile from [SuccinctPaul/ere-zkvm-examples](https://github.com/SuccinctPaul/ere-zkvm-examples) with a few modifications
 
-
 .DEFAULT_GOAL := help
 
 ##@ Help
@@ -31,3 +30,5 @@ run_openvm: ## run openvm
 run_pico: ## run pico
 	cargo +nightly-2024-11-27 run --bin host --features=pico  --release -- --nocapture
 
+run_zisk: ## run zisk
+	cargo run --bin host --features=zisk  --release -- --nocapture

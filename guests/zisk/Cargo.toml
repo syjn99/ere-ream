@@ -1,0 +1,15 @@
+[package]
+name = "zisk-guest"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+# v0.9.0: https://github.com/0xPolygonHermez/zisk/releases/tag/v0.9.0
+ziskos = { git = "https://github.com/0xPolygonHermez/zisk", rev = "v0.9.0" }
+
+# Ream dependencies
+ream-consensus = { workspace = true }
+
+# Misc
+bincode = "1.3"
