@@ -29,7 +29,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let report = zkvm.execute(&input)?;
 
     // Print the execution report
-    println!("Total cycles: {}", report.total_num_cycles);
+
+    // NOTE: Some zkVMs (e.g. OpenVM) may not provide cycle counts.
+    if report.total_num_cycles > 0 {
+        println!("Total cycles: {}", report.total_num_cycles);
+    }
     for (region, cycles) in report.region_cycles.iter() {
         println!("  Region: {}, Cycles: {}", region, cycles);
     }

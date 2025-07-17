@@ -1,5 +1,12 @@
 [workspace]
-members = ["host", "guests/sp1", "guests/risc0", "guests/risc0/guest", "utils"]
+members = [
+    "host",
+    "guests/openvm",
+    "guests/risc0",
+    "guests/risc0/guest",
+    "guests/sp1",
+    "utils",
+]
 resolver = "2"
 
 [workspace.package]

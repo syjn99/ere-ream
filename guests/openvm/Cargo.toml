@@ -1,0 +1,13 @@
+[package]
+name = "openvm-guest"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+openvm = { git = "https://github.com/openvm-org/openvm.git", features = [
+    "std",
+], tag = "v1.1.1" }
+
+# Ream dependencies
+ream-consensus = { workspace = true }

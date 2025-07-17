@@ -3988,14 +3988,27 @@ checksum = "d05e27ee213611ffe7d6348b942e8f942b37114c00cc03cec254295a4a17852e"
 
 [[package]]
 name = "openvm"
+version = "1.1.1"
+source = "git+https://github.com/openvm-org/openvm.git?tag=v1.1.1#2f9bf748a7e6130d530adbefb6a6507278098ff5"
+dependencies = [
+ "bytemuck",
+ "num-bigint 0.4.6",
+ "openvm-custom-insn 0.1.0 (git+https://github.com/openvm-org/openvm.git?tag=v1.1.1)",
+ "openvm-platform 1.1.1",
+ "openvm-rv32im-guest 1.1.1",
+ "serde",
+]
+
+[[package]]
+name = "openvm"
 version = "1.2.0"
 source = "git+https://github.com/openvm-org/openvm.git?tag=v1.2.0#bdb4831fefed13b0741d3a052d434a9c995c6d5d"
 dependencies = [
  "bytemuck",
  "num-bigint 0.4.6",
- "openvm-custom-insn",
- "openvm-platform",
- "openvm-rv32im-guest",
+ "openvm-custom-insn 0.1.0 (git+https://github.com/openvm-org/openvm.git?tag=v1.2.0)",
+ "openvm-platform 1.2.0",
+ "openvm-rv32im-guest 1.2.0",
  "serde",
 ]
 
@@ -4103,8 +4116,8 @@ source = "git+https://github.com/openvm-org/openvm.git?tag=v1.2.0#bdb4831fefed13
 dependencies = [
  "num-bigint 0.4.6",
  "num-traits",
- "openvm",
- "openvm-platform",
+ "openvm 1.2.0",
+ "openvm-platform 1.2.0",
  "serde",
  "serde-big-array",
  "strum_macros",
@@ -4132,7 +4145,7 @@ source = "git+https://github.com/openvm-org/openvm.git?tag=v1.2.0#bdb4831fefed13
 dependencies = [
  "cargo_metadata 0.18.1",
  "eyre",
- "openvm-platform",
+ "openvm-platform 1.2.0",
  "serde",
  "serde_json",
 ]
@@ -4220,6 +4233,16 @@ dependencies = [
 [[package]]
 name = "openvm-custom-insn"
 version = "0.1.0"
+source = "git+https://github.com/openvm-org/openvm.git?tag=v1.1.1#2f9bf748a7e6130d530adbefb6a6507278098ff5"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.104",
+]
+
+[[package]]
+name = "openvm-custom-insn"
+version = "0.1.0"
 source = "git+https://github.com/openvm-org/openvm.git?tag=v1.2.0#bdb4831fefed13b0741d3a052d434a9c995c6d5d"
 dependencies = [
  "proc-macro2",
@@ -4272,12 +4295,12 @@ dependencies = [
  "lazy_static",
  "num-bigint 0.4.6",
  "once_cell",
- "openvm",
+ "openvm 1.2.0",
  "openvm-algebra-guest",
  "openvm-algebra-moduli-macros",
- "openvm-custom-insn",
+ "openvm-custom-insn 0.1.0 (git+https://github.com/openvm-org/openvm.git?tag=v1.2.0)",
  "openvm-ecc-sw-macros",
- "openvm-rv32im-guest",
+ "openvm-rv32im-guest 1.2.0",
  "p256",
  "serde",
  "strum_macros",
@@ -4305,6 +4328,14 @@ dependencies = [
  "openvm-transpiler",
  "rrs-lib",
  "strum",
+]
+
+[[package]]
+name = "openvm-guest"
+version = "0.1.0"
+dependencies = [
+ "openvm 1.1.1",
+ "ream-consensus",
 ]
 
 [[package]]
@@ -4364,7 +4395,7 @@ name = "openvm-keccak256-guest"
 version = "1.2.0"
 source = "git+https://github.com/openvm-org/openvm.git?tag=v1.2.0#bdb4831fefed13b0741d3a052d434a9c995c6d5d"
 dependencies = [
- "openvm-platform",
+ "openvm-platform 1.2.0",
  "tiny-keccak",
 ]
 
@@ -4537,15 +4568,15 @@ dependencies = [
  "lazy_static",
  "num-bigint 0.4.6",
  "num-traits",
- "openvm",
+ "openvm 1.2.0",
  "openvm-algebra-complex-macros",
  "openvm-algebra-guest",
  "openvm-algebra-moduli-macros",
- "openvm-custom-insn",
+ "openvm-custom-insn 0.1.0 (git+https://github.com/openvm-org/openvm.git?tag=v1.2.0)",
  "openvm-ecc-guest",
  "openvm-ecc-sw-macros",
- "openvm-platform",
- "openvm-rv32im-guest",
+ "openvm-platform 1.2.0",
+ "openvm-rv32im-guest 1.2.0",
  "rand 0.8.5",
  "serde",
  "strum_macros",
@@ -4567,13 +4598,24 @@ dependencies = [
 
 [[package]]
 name = "openvm-platform"
+version = "1.1.1"
+source = "git+https://github.com/openvm-org/openvm.git?tag=v1.1.1#2f9bf748a7e6130d530adbefb6a6507278098ff5"
+dependencies = [
+ "getrandom 0.2.16",
+ "libm",
+ "openvm-custom-insn 0.1.0 (git+https://github.com/openvm-org/openvm.git?tag=v1.1.1)",
+ "openvm-rv32im-guest 1.1.1",
+]
+
+[[package]]
+name = "openvm-platform"
 version = "1.2.0"
 source = "git+https://github.com/openvm-org/openvm.git?tag=v1.2.0#bdb4831fefed13b0741d3a052d434a9c995c6d5d"
 dependencies = [
  "getrandom 0.2.16",
  "libm",
- "openvm-custom-insn",
- "openvm-rv32im-guest",
+ "openvm-custom-insn 0.1.0 (git+https://github.com/openvm-org/openvm.git?tag=v1.2.0)",
+ "openvm-rv32im-guest 1.2.0",
 ]
 
 [[package]]
@@ -4638,10 +4680,19 @@ dependencies = [
 
 [[package]]
 name = "openvm-rv32im-guest"
+version = "1.1.1"
+source = "git+https://github.com/openvm-org/openvm.git?tag=v1.1.1#2f9bf748a7e6130d530adbefb6a6507278098ff5"
+dependencies = [
+ "openvm-custom-insn 0.1.0 (git+https://github.com/openvm-org/openvm.git?tag=v1.1.1)",
+ "strum_macros",
+]
+
+[[package]]
+name = "openvm-rv32im-guest"
 version = "1.2.0"
 source = "git+https://github.com/openvm-org/openvm.git?tag=v1.2.0#bdb4831fefed13b0741d3a052d434a9c995c6d5d"
 dependencies = [
- "openvm-custom-insn",
+ "openvm-custom-insn 0.1.0 (git+https://github.com/openvm-org/openvm.git?tag=v1.2.0)",
  "strum_macros",
 ]
 
@@ -4652,7 +4703,7 @@ source = "git+https://github.com/openvm-org/openvm.git?tag=v1.2.0#bdb4831fefed13
 dependencies = [
  "openvm-instructions",
  "openvm-instructions-derive",
- "openvm-rv32im-guest",
+ "openvm-rv32im-guest 1.2.0",
  "openvm-stark-backend",
  "openvm-transpiler",
  "rrs-lib",
@@ -4677,7 +4728,7 @@ dependencies = [
  "hex",
  "itertools 0.14.0",
  "metrics",
- "openvm",
+ "openvm 1.2.0",
  "openvm-algebra-circuit",
  "openvm-algebra-transpiler",
  "openvm-bigint-circuit",
@@ -4751,7 +4802,7 @@ name = "openvm-sha256-guest"
 version = "1.2.0"
 source = "git+https://github.com/openvm-org/openvm.git?tag=v1.2.0#bdb4831fefed13b0741d3a052d434a9c995c6d5d"
 dependencies = [
- "openvm-platform",
+ "openvm-platform 1.2.0",
  "sha2",
 ]
 
@@ -4838,7 +4889,7 @@ dependencies = [
  "elf",
  "eyre",
  "openvm-instructions",
- "openvm-platform",
+ "openvm-platform 1.2.0",
  "openvm-stark-backend",
  "rrs-lib",
  "thiserror 1.0.69",
