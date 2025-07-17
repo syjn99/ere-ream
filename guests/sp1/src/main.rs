@@ -1,12 +1,18 @@
 #![no_main]
 sp1_zkvm::entrypoint!(main);
 
-fn main() {
-    println!("cycle-tracker-report-start: read_input");
-    let input = sp1_zkvm::io::read::<u32>();
-    println!("cycle-tracker-report-end: read_input");
+use ream_consensus::{attestation::Attestation, electra::beacon_state::BeaconState};
 
-    println!("cycle-tracker-report-start: execute");
-    let dummy = input * 2;
-    println!("cycle-tracker-report-end: execute");
+fn main() {
+    println!("cycle-tracker-report-start: read-pre-state");
+    let mut pre_state = sp1_zkvm::io::read::<BeaconState>();
+    println!("cycle-tracker-report-end: read-pre-state");
+
+    println!("cycle-tracker-report-start: read-attestation");
+    let attestation = sp1_zkvm::io::read::<Attestation>();
+    println!("cycle-tracker-report-end: read-attestation");
+
+    println!("cycle-tracker-report-start: process-attestation");
+    let _ = pre_state.process_attestation(&attestation);
+    println!("cycle-tracker-report-end: process-attestation");
 }

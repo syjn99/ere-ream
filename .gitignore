@@ -1,2 +1,5 @@
 /target
 guests/**/target
+
+# Misc
+.DS_Store

@@ -1,7 +1,8 @@
 [package]
 name = "host"
-version = "0.1.0"
-edition = "2024"
+edition.workspace = true
+rust-version.workspace = true
+version.workspace = true
 
 [dependencies]
 # Ere dependencies
@@ -12,8 +13,14 @@ ere-pico = { git = "https://github.com/eth-act/ere", rev = "3da61c14cbefc2d15d50
 ere-openvm = { git = "https://github.com/eth-act/ere", rev = "3da61c14cbefc2d15d50b982632af261277d1357", package = "ere-openvm", optional = true }
 ere-zisk = { git = "https://github.com/eth-act/ere", rev = "3da61c14cbefc2d15d50b982632af261277d1357", package = "ere-zisk", optional = true }
 
+# Ream dependencies
+ream-consensus = { workspace = true }
+
 # Misc
 anyhow = "1.0"
+
+# Local dependencies
+utils = { workspace = true }
 
 [features]
 default = []
