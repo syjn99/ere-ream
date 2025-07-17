@@ -1,0 +1,24 @@
+[package]
+name = "host"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# Ere dependencies
+zkvm-interface = { workspace = true }
+ere-sp1 = { git = "https://github.com/eth-act/ere", rev = "3da61c14cbefc2d15d50b982632af261277d1357", package = "ere-sp1", optional = true }
+ere-risczero = { git = "https://github.com/eth-act/ere", rev = "3da61c14cbefc2d15d50b982632af261277d1357", package = "ere-risczero", optional = true }
+ere-pico = { git = "https://github.com/eth-act/ere", rev = "3da61c14cbefc2d15d50b982632af261277d1357", package = "ere-pico", optional = true }
+ere-openvm = { git = "https://github.com/eth-act/ere", rev = "3da61c14cbefc2d15d50b982632af261277d1357", package = "ere-openvm", optional = true }
+ere-zisk = { git = "https://github.com/eth-act/ere", rev = "3da61c14cbefc2d15d50b982632af261277d1357", package = "ere-zisk", optional = true }
+
+# Misc
+anyhow = "1.0"
+
+[features]
+default = []
+sp1 = ["ere-sp1"]
+risc0 = ["ere-risczero"]
+openvm = ["ere-openvm"]
+pico = ["ere-pico"]
+zisk = ["ere-zisk"]

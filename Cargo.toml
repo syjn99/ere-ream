@@ -1,0 +1,16 @@
+[workspace]
+members = ["host", "guests/sp1", "guests/risc0", "guests/risc0/guest"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+
+[workspace.dependencies]
+# Ere dependencies
+zkvm-interface = { git = "https://github.com/eth-act/ere", rev = "3da61c14cbefc2d15d50b982632af261277d1357", package = "zkvm-interface" }
+
+# Always optimize.
+[profile.dev]
+opt-level = 3
